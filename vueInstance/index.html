@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instance</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app"> 
+        <h1>{{title}}</h1>
+        <p>{{content}}</p>
+        <a 
+        :target="google.target"
+        v-bind:href="google.url" 
+        v-bind:alt="google.alt">
+
+        {{google.title}}</a>
+        <button v-on:click="changeTitle('1.buton')"> Değiştir </button>
+        <button v-on:click="changeTitle('2.buton')"> Değiştir </button>
+        <div 
+        @mousemove="updateCoords('mouseMove',$event)"
+        class="box"
+        @click="changeTitle('Boxtan gelen')"> </div>
+        <span>{{coords.x}} , {{coords.y}}</span>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
